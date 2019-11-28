@@ -3,8 +3,8 @@ from math import floor
 from Simulator import Simulator
 
 # COLOURS
-white = (255, 255, 255)
-black = (0, 0, 0)
+white = (255, 255, 255) #alive?
+black = (0, 0, 0) #dead?
 orange = (240, 120, 0)
 rainbow = [
     white,

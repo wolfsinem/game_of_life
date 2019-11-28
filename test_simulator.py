@@ -12,7 +12,22 @@ class TestSimulator(TestCase):
     def test_update(self):
         """
         Tests that the update functions returns an object of World type.
+        
+        1) check for less than 2 neighbours [die]
+        2) check for 2 or 3 neighbours [next generation]
+        3) check for more than 3 neighbours [die]
+        4) check for dead cell with 3 neighbours alive [refactor]
         """
+        if state alive == ALIVE:
+            if neighbours_alive < 2:
+                return EMPTY #die
+            elif neighbours_alive > 3:
+                return EMPTY #die 
+        else:
+            if neighbours_alive == 2 or neighbours_alive == 3:
+                return ALIVE 
+        return state
+
         self.assertIsInstance(self.sim.update(), World)
 
     def test_get_generation(self):
