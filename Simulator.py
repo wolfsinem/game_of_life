@@ -6,12 +6,22 @@ class Simulator:
     Read https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life for an introduction to Conway's Game of Life.
     """
 
-    def __init__(self, world = None):
+    def __init__(self, world = None, survival = [2,3], birth = [3,6]):
         """
         Constructor for Game of Life simulator.
+        
+        BX/BY B36/S23 birth bij 3 of 6 levende buren, survival bij 2 of 3 levende buren
+        @param world: (optional) environment used to simulate Game of Life.
+        @param survival: number of neighbours required for survival
+        @param birth: number of neighbours required for birth
 
-        :param world: (optional) environment used to simulate Game of Life.
+        @type world: int
+        @type survival: list of int
+        @type birth: list of int
         """
+        self.survival = survival
+        self.birth = birth 
+
         self.generation = 0
         if world == None:
             self.world = World(20)
