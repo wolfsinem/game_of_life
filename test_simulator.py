@@ -6,9 +6,12 @@ class TestSimulator(TestCase):
     """
     Tests for ``Simulator`` implementation.
     """
-    def setUp(self):
+    def setUp(self): #run method prior to each test
         self.sim = Simulator()
-        world = self.sim.world()
+        self.world = self.sim.world()
+    
+    def tearDown(self): #invoke method after each test
+        pass
 
     def test_update(self):
         """
@@ -18,22 +21,8 @@ class TestSimulator(TestCase):
         2) check for 2 or 3 neighbours [next generation]
         3) check for more than 3 neighbours [die] 
         4) check for dead cell with 3 neighbours alive [refactor]
-
         """
-        # 1) die if less than 2 neighbours 
-        self.sim.world.set(x,y)
-
-        if state alive == ALIVE:
-            if neighbours_alive < 2:
-                return EMPTY #die
-            elif neighbours_alive > 3:
-                return EMPTY #die 
-        else:
-            if neighbours_alive == 2 or neighbours_alive == 3:
-                return ALIVE 
-        return state
-
-        self.assertIsInstance(self.sim.update(), World)
+        self.assertIsInstance(self.sim.update(), World) #test if object is/isnt an instance of class
 
     def test_get_generation(self):
         """
