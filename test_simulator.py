@@ -8,16 +8,21 @@ class TestSimulator(TestCase):
     """
     def setUp(self):
         self.sim = Simulator()
+        world = self.sim.world()
 
     def test_update(self):
         """
         Tests that the update functions returns an object of World type.
-        
+
         1) check for less than 2 neighbours [die]
         2) check for 2 or 3 neighbours [next generation]
         3) check for more than 3 neighbours [die] 
         4) check for dead cell with 3 neighbours alive [refactor]
+
         """
+        # 1) die if less than 2 neighbours 
+        self.sim.world.set(x,y)
+
         if state alive == ALIVE:
             if neighbours_alive < 2:
                 return EMPTY #die
