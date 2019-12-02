@@ -9,3 +9,9 @@ class TestCalc(unittest.TestCase):
         #run python -m unittest test_calc
         #outcome: OK --> test is geslaagd 
  
+
+if __name__ == '__main__':
+     unittest.main()
+#run python test_calc in terminal
+#or within the editor 
+
