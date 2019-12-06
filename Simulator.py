@@ -10,7 +10,7 @@ class Simulator:
         """
         Constructor for Game of Life simulator.
         
-        BX/BY B36/S23 birth bij 3 levende buren, survival bij 2 of 3 levende buren
+        BX/BY B3/S23 birth bij 3 levende buren, survival bij 2 of 3 levende buren
         @param world: (optional) environment used to simulate Game of Life.
         @param survival: number of neighbours required for survival
         @param birth: number of neighbours required for birth
