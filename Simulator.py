@@ -37,8 +37,19 @@ class Simulator:
         :return: New state of the world.
         """
         self.generation += 1
+        next_generation = World(self.world.width, self.world.height)
 
         #TODO: Do something to evolve the generation
+        for y in range(0, self.world.height):
+            for x in range(0, self.world.width):
+                neighbours = self.world.get_neighbours(x,y)
+                total_neighbours = len([n for n in neighbours if i > 0 ])
+                cell = self.world.get(x,y)
+
+                if cell > 0 and total_neighbours not in survive:
+                    next_generation.set(x, y, cell - 1)
+                else: 
+                    next_generation.set(x, y, cell)
 
         return self.world
 

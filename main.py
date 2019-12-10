@@ -2,6 +2,7 @@ from Visualisation import *
 from Simulator import *
 import time
 
+# Python3.7 main.py
 # Configuratie
 VISUALISATION=True
 
